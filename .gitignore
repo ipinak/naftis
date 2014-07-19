@@ -1,4 +1,4 @@
-.ropepoject/
+.ropeproject/
 tmp/*
 *.pyc
-.DS_Store/
+.DS_Store
