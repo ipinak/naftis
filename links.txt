@@ -1,0 +1,11 @@
+Επιχειρήσεις --
+http://www.naftemporiki.gr/rssFeed?mode=categ&id=8&atype=story
+
+Αγορές --
+http://www.naftemporiki.gr/rssFeed?mode=categ&id=7&atype=story
+
+Οικονομία --
+http://www.naftemporiki.gr/rssFeed?mode=categ&id=6&atype=story
+
+Οικονομία & Αγορές --
+http://www.naftemporiki.gr/rssFeed?mode=categ&id=1&atype=story

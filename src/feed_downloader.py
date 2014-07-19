@@ -1,10 +1,5 @@
 #!/usr/bin/env python
 
-# try:
-#     from lxml import etree
-# except ImportError:
-#     print "install lxml"
-
 import time
 import urllib2
 import feedparser
