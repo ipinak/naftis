@@ -1,0 +1,4 @@
+.ropepoject/
+tmp/*
+*.pyc
+.DS_Store/
