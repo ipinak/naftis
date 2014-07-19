@@ -82,7 +82,9 @@ def retrieve_data(tag, document):
 
 def save_to_file(title_of_article, contents, location):
     fd = open(u"{0}/{1}.html".format(location, title_of_article[:15]), "wr")
-    try: # Try to read the contents, if nothing exists it will raise an exception, then write.
+    # Try to read the contents, if nothing exists it will raise an exception,
+    # then write.
+    try:
         fd.read()
     except IOError:
         fd.write(contents)
