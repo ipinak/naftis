@@ -23,7 +23,11 @@ def log_tc(fn):
 
 
 class SQLiteConnector_Test(unittest.TestCase):
-    pass
+    def setUp(self):
+        self.db_storage = db_storage.SQLiteConnector('tmp.db')
+
+    def test_store(self):
+        self.db_storage.store('id', ['title', 'hash', 'filename', 'timestamp'])
 
 
 if __name__ == '__main__':

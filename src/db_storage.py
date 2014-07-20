@@ -2,6 +2,8 @@
 
 import hashlib, sqlite3
 
+NEWS_INSERT = "insert into news_feed values ({0}, {1}, {2}, {3})"
+
 def create_mapping(self, title):
     """
     :returns - a tuple with the hash value and the title
@@ -57,19 +59,26 @@ class SQLiteConnector(db_connector):
         :param db - the database filename.
         """
         self.db = db
+        self.open()
     
-    def _open(self):
+    def open(self):
         self.connection = sqlite3.connect(self.db)
 
-    def _close(self):
+    def close(self):
         self.connection.close()
 
     def store(self, key, value):
-        pass
+        cursor = self.connection.cursor()
+        sql_ins = NEWS_INSERT.format(*value)
+
+        #cursor.execute()
 
     def exists(self, key):
         pass
 
     def delete(self, key):
         pass
-    
+
+if __name__ == '__main__':
+    s = SQLiteConnector('d.d')
+    s.store('1', ['title', 'hash', 'filename', 'timestamp'])
