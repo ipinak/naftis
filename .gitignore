@@ -5,3 +5,5 @@ tmp/*
 *.env
 *.txt
 reports/
+*.db
+*.sqlite

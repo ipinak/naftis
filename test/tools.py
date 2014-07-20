@@ -10,6 +10,7 @@
 #
 __author__ = 'ipinak'
 
+import sys
 from unittest import makeSuite, TestSuite
 
 
@@ -25,3 +26,22 @@ def run_tests(test_cases, location='', title=None, description=None):
                                            description=description
     )
     runner.run(suite)
+
+
+def include_path(*directories):
+    """
+    Include in the python path one or more directories
+    :param directories
+    """
+    for dir in directories:
+        print("> including in python path: " + dir + "\n")
+        sys.path.append(dir)
+
+def exclude_path(*directories):
+    """
+    Exclude from the python path one or more directories
+    :param directories
+    """
+    for dir in directories:
+        print("> excluding from python path: " + dir + "\n")
+        sys.path.remove(dir)

@@ -21,10 +21,22 @@ def log_tc(fn):
         print '### Log output: ' + str(retVal)
     return wrapped
 
+def include_src():
+    # Include on the python path the src directory, so you can perform
+    # invoke modules.
+    tools.include_path("src/")
+
+def exclude_src():
+    tools.exclude_path("src/")
 
 class SQLiteConnector_Test(unittest.TestCase):
     def setUp(self):
+        include_src()
+        import db_storage
         self.db_storage = db_storage.SQLiteConnector('tmp.db')
+
+    def tearDown(self):
+        exclude_src()
 
     def test_store(self):
         self.db_storage.store('id', ['title', 'hash', 'filename', 'timestamp'])
