@@ -1,16 +1,23 @@
-Disclaimer: This project is merely an attempt to explore Python and its 
-threading capabilities.
+# Introduction
 
------------------------------------------------------------------------
+This is a crawler for naftemporiki.gr online newspaper.
 
-This is rather simple pool threading concept, where you create a number 
-of tasks statically or even dymanically and you add them in the pool.
+# Usage
 
-The pool is implemented as a queue and executes the tasks in parallel. 
-By default the pool can maintain up to 8 tasks at the same time. We 
-choose this limit, since most people have 4 core CPUs, which most of 
-the time corresponds to 8 hardware threads. Currently you are unable 
-to resize your queue dynamically, only statically upon creation. This 
-ISSUE will be fixed soon, so you can dynamically change the maximum 
-number of threads.
+## Requirements
+
+You need to have these installed to run the project.
+
+- Python 2.x
+- pip
+- virtualenv
+
+## Prepare \& Run
+
+    $ virtualenv naftis_env
+    $ source naftis_env/bin/activate
+    $ pip install -r requirements.txt
+    $ python src/app.py -d tmp -t 10 -l links.txt 
+
+# License
 

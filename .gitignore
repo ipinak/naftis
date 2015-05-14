@@ -7,3 +7,4 @@ tmp/*
 reports/
 *.db
 *.sqlite
+*_env/
