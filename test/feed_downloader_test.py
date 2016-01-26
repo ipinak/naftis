@@ -1,25 +1,18 @@
 # !/usr/bin/env python
 # -*- coding:utf-8 -*-
 # ***************************************************
-# Filename: feed_downloader_test.py
-# ***************************************************
 # Author: Ioannis Pinakoulakis
-# Maintainer: 
-# Created: Sun Sep 14 22:58:56 2014 (+0200)
-# Version: 
-# Last-Updated: 
-#           By: 
-#     Update #: 0
-# Description: 
+# Description:
 # ***************************************************
-# 
+#
 __author__ = 'ipinak'
 
 from unittest import TestCase
 
+import tools
 
 class BaseTest(TestCase):
-    
+
     def setUp(self):
         self.html_data = """
         <html><head><title>The Dormouse's story</title></head>
@@ -38,7 +31,7 @@ class BaseTest(TestCase):
         <ol><li>Item 2.1</li><li>Item 2.2</li><li>Item 2.3</li></ol>
         </div>
         </div>
-        
+
         <div class="after entityCont">Nothing here just testing...</div>
         </body>
         """
@@ -49,7 +42,20 @@ class BaseTest(TestCase):
 
 class Test_FeedDownloader(BaseTest):
 
+    def setUp(self):
+        super(Test_FeedDownloader, self).setUp()
+
+
     def test_parsing(self):
         '''Pass the html doc and check if it parses and extracts correctly the
         data.'''
         pass
+
+
+if __name__ == '__main__':
+    tools.run_tests(
+        [Test_FeedDownloader],
+        'reports',
+        'unittests - feed_downloader.py test report',
+        'General test results'
+    )
