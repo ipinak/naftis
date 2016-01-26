@@ -2,9 +2,8 @@
 # -*- coding:utf-8 -*-
 # *******************************************************************
 # Author: Ioannis Pinakoulakis
-# Created: Mon Sep  1 22:35:41 2014 (+0200)
 # Description:
-# $ python src/app.py -d tmp -t 10 -l /Users/ipinak/Abstract_Development/Python/naftemporiki_reader/links.txt
+# $ python src/app.py -d tmp -t 10 -l /links.txt
 # *******************************************************************
 #
 from naftis import feed_downloader, config

@@ -9,6 +9,8 @@
 # 1) add support for CouchDB
 # *******************************************************************
 #
+import os
+
 import utils
 
 
@@ -26,7 +28,8 @@ class FileMapper(object):
         self._save_to_file(hash_tuple, contents)
 
     def _save_to_file(self, hash_tuple, contents):
-        fd = open(u'{0}/{1}.html'.format(self.directory, hash_tuple), 'wr')
+        filepath = self._create_path()
+        fd = open(u'{0}/{1}.html'.format(filepath, hash_tuple), 'wr')
         # TODO: change this, instead of checking if the file exists
         # try to check if the hash value exists in the file db.
         try:
@@ -35,3 +38,14 @@ class FileMapper(object):
             fd.write(contents)
         finally:
             fd.close()
+
+    def _create_path(self):
+        """
+        If the path exists return it, otherwise create a path based on
+        the current path and the given directory.
+        :return: filepath in string format
+        """
+        if os.path.exists(self.directory):
+            return self.directory
+        os.mkdir(os.getcwd() + "/" + self.directory)
+        return os.getcwd() + "/" + self.directory
