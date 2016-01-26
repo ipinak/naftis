@@ -2,28 +2,23 @@
 # !/usr/bin/env python
 # -*- coding:utf-8 -*-
 # *******************************************************************
-# Filename: parser_test.py
-# *******************************************************************
 # Author: Ioannis Pinakoulakis
-# Maintainer: 
-# Created: Sun Sep 28 14:29:32 2014 (+0200)
-# Version: 
-# Last-Updated: 
-#           By: 
-#     Update #: 0
-# Description: 
-# *******************************************************************
-# Keywords: 
+# Description:
+# Keywords:
 # *******************************************************************
 #
 __author__ = 'ipinak'
 
 from unittest import TestCase
 
+import tools
+
+
 class BaseParser_Test(TestCase):
 
     def setUp(self):
-        self.html_doc = """
+        tools.include_path("../src/")
+        self.html_doc = u"""
         <html><head><title>The Dormouse's story</title></head>
         <body>
         <p class="title"><b>The Dormouse's story</b></p>
@@ -42,8 +37,8 @@ class BaseParser_Test(TestCase):
         </div>
         </div>
         <div class="left">
-        <a class="btnLink tag-red" href="/stream/1131/anaskafi-stin-arxaia-amfipoli">ΑΝΑΣΚΑΦΗ ΣΤΗΝ ΑΡΧΑΙΑ ΑΜΦΙΠΟΛΗ</a>
-        <a class="btnLink" href="/tag/417/arxaiologia">ΑΡΧΑΙΟΛΟΓΙΑ</a>
+        <a class="btnLink tag-red" href="/stream/1131/anaskafi-stin-arxaia-amfipoli"hafkdsf adhskf sdahkf sdahf sdhf lsad</a>
+        <a class="btnLink" href="/tag/417/arxaiologia">sfsafsdafsad</a>
         <div class="clear"> </div>
         </div>
         </div>
@@ -53,6 +48,7 @@ class BaseParser_Test(TestCase):
         """
 
     def tearDown(self):
+        tools.exclude_path("../src/")
         del self.html_doc
 
 
@@ -65,3 +61,11 @@ class NaftemporikiParser_Test(BaseParser_Test):
 
         print parsed_data
 
+
+if __name__ == '__main__':
+    tools.run_tests(
+        [NaftemporikiParser_Test],
+        'reports',
+        'unittests - feed_downloader.py test report',
+        'General test results'
+    )
