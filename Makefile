@@ -4,11 +4,7 @@ CC=python
 MAKE=make
 FLAKES=pyflakes
 
-.PHONY: all test clean
-
-all:
-	${CC} ./src/*.py
-	ls -lR
+.PHONY: clean
 
 # Remove all the compiled files
 clean:

@@ -7,8 +7,7 @@
 # $ python src/app.py -d tmp -t 10 -l /Users/ipinak/Abstract_Development/Python/naftemporiki_reader/links.txt
 # *******************************************************************
 #
-import config
-from naftis import feed_downloader
+from naftis import feed_downloader, config
 from optparse import OptionParser
 
 parser = OptionParser()

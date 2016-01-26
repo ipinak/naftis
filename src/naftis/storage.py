@@ -6,10 +6,9 @@
 # Description:
 # *******************************************************************
 # TODO:
-# 1) test the connection to a CouchDB instance
+# 1) add support for CouchDB
 # *******************************************************************
 #
-#import couchdb
 import utils
 
 
@@ -36,52 +35,3 @@ class FileMapper(object):
             fd.write(contents)
         finally:
             fd.close()
-
-
-class db_connector(object):
-
-    def __init__(self):
-        # Log here...
-        pass
-
-    def store(self, key, value):
-        pass
-
-    def exists(self, key):
-        pass
-
-    def delete(self, key):
-        pass
-
-
-class CouchDBConnector(db_connector):
-
-    def __init__(self, server, port):
-        self.server = server
-        self.port = port
-
-    def connect(self):
-        self.couch = couchdb.Server(self.server + ':' + self.port)
-
-    def create(self, document):
-        return self.couch.create(document)
-
-    def get(self, cid):
-        return self.couch.get(id=cid)
-
-    def save(self, document, data):
-        self.couch.save(data)
-
-    def delete(self, data):
-        self.couch.delete(data)
-
-    def query(self, map_fn, reduce_fn=None, language='javascript', **options):
-        """
-        :param options - descending := True | False
-        :return
-        """
-        return self.couch.query(map_fn, reduce_fn, options)
-
-
-if __name__ == '__main__':
-    pass
