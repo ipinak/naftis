@@ -9,3 +9,4 @@ reports/
 *.sqlite
 *_env/
 reports/
+*.log
