@@ -21,7 +21,7 @@ __author__ = 'ipinak'
 from unittest import TestCase
 
 class BaseParser_Test(TestCase):
-    
+
     def setUp(self):
         self.html_doc = """
         <html><head><title>The Dormouse's story</title></head>
@@ -32,7 +32,7 @@ class BaseParser_Test(TestCase):
         <a href="http://example.com/lacie" class="sister" id="link2">Lacie</a> and
         <a href="http://example.com/tillie" class="sister" id="link3">Tillie</a>;
         and they lived at the bottom of a well.</p>
-        
+
         <div class="entityContainer story">
         <div class="entityMain article">
         <div id='something'>Some text here to make it bigger <b>Bold text here...</b> <a href="http://example.com/link4" class="sister" id="link4">link4</a><br /></div>
@@ -47,7 +47,7 @@ class BaseParser_Test(TestCase):
         <div class="clear"> </div>
         </div>
         </div>
-    
+
         <div class="after entityCont">Nothing here just testing...</div>
         </body>
         """
@@ -64,4 +64,4 @@ class NaftemporikiParser_Test(BaseParser_Test):
         parsed_data = np.parse()
 
         print parsed_data
-    
+
