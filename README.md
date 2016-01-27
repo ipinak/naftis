@@ -19,6 +19,14 @@ You need to have these installed to run the project.
     $ pip install -r requirements.txt
     $ python src/app.py -d tmp -t 10 -l links.txt 
 
+If you are using Docker you can use the `Dockerfile` you will find in the
+repository.
+
+    $ cd naftis
+    $ (sudo) docker build -t="naftis" .
+    $ (sudo) docker run naftis
+
+
 # License
 
 The MIT License (MIT)
