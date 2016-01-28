@@ -17,4 +17,4 @@ VOLUME ["/data"]
 ADD run.sh /run.sh
 RUN chmod a+x /run.sh
 
-ENTRYPOINT ["./run.sh"]
+ENTRYPOINT ["/bin/sh", "-c", "./run.sh"]
