@@ -1,6 +1,8 @@
 # Introduction
 
-This is a crawler for naftemporiki.gr online newspaper.
+This is a crawler for naftemporiki.gr online newspaper. The output of this crawler
+is written in plain text files. The files are stored under directories with the
+format `yyyy-mm-dd` and the actual files are named using the following: `<hash>.html`.
 
 # Usage
 

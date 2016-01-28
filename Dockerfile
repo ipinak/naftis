@@ -15,5 +15,6 @@ RUN apt-get update\
 VOLUME ["/data"]
 
 ADD run.sh /run.sh
+RUN chmod a+x /run.sh
 
 ENTRYPOINT ["./run.sh"]
