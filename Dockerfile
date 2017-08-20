@@ -1,15 +1,16 @@
 FROM ubuntu:14.04
 MAINTAINER ipinak
 
+COPY ./ /naftis
+
 # Prepare the environment
-RUN apt-get update\
-    && apt-get install -y python python-dev git-core wget\
-    && wget https://bootstrap.pypa.io/get-pip.py\
-    && python get-pip.py\
-    && apt-get clean\
-    && git clone https://github.com/ipinak/naftis naftis\
+RUN apt-get update \
+    && apt-get install -y python python-dev git-core wget \
+    && wget https://bootstrap.pypa.io/get-pip.py \
+    && python get-pip.py \
+    && apt-get clean \
     && cd naftis\
-    && pip install -r requirements.txt\
+    && pip install -r requirements.txt \
     && mkdir -p /var/tmp/supervisor
 
 VOLUME ["/data"]

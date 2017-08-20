@@ -1,0 +1,18 @@
+version: '3'
+services:
+    naftis:
+        build: .
+        depends_on:
+            - database
+        volumes:
+            - "./tmp:/data"
+        deploy:
+            restart_policy:
+                condition: on-failure
+                delay: 5s
+                max_attempts: 3
+                window: 120s
+    database:
+        image: "klaemo/couchdb:2.0.0"
+
+

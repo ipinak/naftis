@@ -53,3 +53,25 @@ class FileMapper(object):
         """
         if not os.path.exists(self.directory):
             os.mkdir(self.directory)
+
+
+class CouchDBStorage(object):
+
+    def __init__(self, config):
+        self._config = config
+
+    def connect(self):
+        self._username = self._config.get("db_username")
+        self._password = self._config.get("db_password")
+
+        # Create the connection here
+        # self._connection = CouchDB()
+
+    def save(self, hash, contents):
+        """
+        Save the contents to the database.
+        :param hash
+        :param contents
+        """
+        pass
+
