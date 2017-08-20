@@ -1,19 +1,15 @@
 #!/bin/env python
 # -*- coding:utf-8 -*-
-# ***********************************************************************
-# Author: ipinak
-# Created: 19/4/14 14:16
-# Description:
-# ***********************************************************************
-#
-__author__ = 'ipinak'
-
-import sys, os
+import sys
+import os
+import HTMLTestRunner
+import time
 from unittest import makeSuite, TestSuite
+
+__author__ = 'ipinak'
 
 
 def run_tests(test_cases, location='', title=None, description=None):
-    import HTMLTestRunner, time
     suite = TestSuite()
     [suite.addTest(makeSuite(tc)) for tc in test_cases]
 
@@ -25,8 +21,7 @@ def run_tests(test_cases, location='', title=None, description=None):
     buffer = file(filepath + '/TestReport_' + timestamp + '.html', 'wb')
     runner = HTMLTestRunner.HTMLTestRunner(stream=buffer,
                                            title=title,
-                                           description=description
-    )
+                                           description=description)
     runner.run(suite)
 
 
@@ -38,6 +33,7 @@ def include_path(*directories):
     for dir in directories:
         print("> including in python path: " + dir + "\n")
         sys.path.append(dir)
+
 
 def exclude_path(*directories):
     """

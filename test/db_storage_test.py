@@ -1,10 +1,11 @@
 #!/bin/env python
 # -*- coding:utf-8 -*-
+import tools
+import unittest
+
 
 __author__ = 'ipinak'
 
-import tools
-import unittest
 
 #########################################################################
 # Internal functions

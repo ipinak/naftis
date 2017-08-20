@@ -1,15 +1,11 @@
 # !/usr/bin/env python
 # -*- coding:utf-8 -*-
-# ***************************************************
-# Author: Ioannis Pinakoulakis
-# Description:
-# ***************************************************
-#
+from unittest import TestCase
+import tools
+
+
 __author__ = 'ipinak'
 
-from unittest import TestCase
-
-import tools
 
 class BaseTest(TestCase):
 

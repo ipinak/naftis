@@ -1,17 +1,11 @@
 # *******************************************************************
 # !/usr/bin/env python
 # -*- coding:utf-8 -*-
-# *******************************************************************
-# Author: Ioannis Pinakoulakis
-# Description:
-# Keywords:
-# *******************************************************************
-#
-__author__ = 'ipinak'
-
 from unittest import TestCase
-
 import tools
+
+
+__author__ = 'ipinak'
 
 
 class BaseParser_Test(TestCase):
