@@ -1,11 +1,5 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-# *******************************************************************
-# Author: Ioannis Pinakoulakis
-# Created: Mon Sep  1 22:35:41 2014 (+0200)
-# Description:
-# *******************************************************************
-#
 import time
 import urllib2
 import feedparser

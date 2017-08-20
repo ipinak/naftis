@@ -1,16 +1,5 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-# *******************************************************************
-# Author: Ioannis Pinakoulakis
-# Created: Sun Sep 28 13:50:26 2014 (+0200)
-# Description:
-# *******************************************************************
-# Keywords: parser, naftemporiki, HTML
-# *******************************************************************
-# TODO:
-# 1) write tests and move stuff to test directory
-# *******************************************************************
-#
 import hashlib
 try:
     from bs4 import SoupStrainer, BeautifulSoup

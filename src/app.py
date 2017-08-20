@@ -1,11 +1,5 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-# *******************************************************************
-# Author: Ioannis Pinakoulakis
-# Description:
-# $ python src/app.py -d tmp -t 10 -l /links.txt
-# *******************************************************************
-#
 from naftis import feed_downloader, config
 from optparse import OptionParser
 

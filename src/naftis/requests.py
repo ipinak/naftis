@@ -1,14 +1,5 @@
 # !/usr/bin/env python
 # -*- coding:utf-8 -*-
-# *******************************************************************
-# Author: Ioannis Pinakoulakis
-# Created: Thu May 14 23:45:49 2015 (+0200)
-# Version: 0.1
-# Description: Generate spoofed urllib2 requests
-# *******************************************************************
-# Keywords: spoofed, requests
-# *******************************************************************
-#
 __author__ = 'ipinak'
 
 import urllib2

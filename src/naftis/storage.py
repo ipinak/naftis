@@ -1,18 +1,9 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-# *******************************************************************
-# Author: Ioannis Pinakoulakis
-# Created: Tue Nov 25 00:39:34 2014 (+0100)
-# Description:
-# *******************************************************************
-# TODO:
-# 1) add support for CouchDB
-# *******************************************************************
-#
 import os
-from datetime import datetime
-
 import utils
+
+from datetime import datetime
 
 
 class FileMapper(object):
@@ -74,4 +65,3 @@ class CouchDBStorage(object):
         :param contents
         """
         pass
-

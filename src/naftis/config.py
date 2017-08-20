@@ -1,14 +1,5 @@
 # !/usr/bin/env python
 # -*- coding:utf-8 -*-
-# *******************************************************************
-# Author: Ioannis Pinakoulakis
-# Created: Thu May 14 23:45:49 2015 (+0200)
-# Version: 0.1
-# Description: Generate spoofed urllib2 requests
-# *******************************************************************
-# Keywords: config, params
-# *******************************************************************
-#
 FIREFOX = "Mozilla/5.0 (X11; U; Linux i686) Gecko/20071127 Firefox/2.0.0.11"
 CHROME = """Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36"""
 SAFARI = """Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14
