@@ -59,14 +59,15 @@ def run(tuple):
     main(feed_link, location)
 
 
+def _load_links(link_file):
+    """Load line separated file which should contain links"""
+    with open(link_file, 'r') as fd:
+        return [(link, location) for link in fd.readlines()]
+
+
 def execute(link_file, location):
     pool = Pool(config.POOLSIZE)
-    items = []
-
-    # Read links
-    with open(link_file, 'r') as fd:
-        for link in fd.readlines():
-            items.append((link, location))
+    items = _load_links(link_file)
 
     while True:
         pool.map(run, items)
