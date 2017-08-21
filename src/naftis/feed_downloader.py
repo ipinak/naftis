@@ -6,7 +6,7 @@ import feedparser
 import requests
 import config
 
-from storage import FileMapper
+from storage import CouchDBStorage
 from logbook import Logger
 from multiprocessing import Pool
 
@@ -46,12 +46,12 @@ def download_entry(feed_entry):
 
 
 def main(feed_link, location):
-    fm = FileMapper(location)
+    db = CouchDBStorage(config)
     entries = getEntries(feed_link)
 
     for entry in entries:
         feed, data = download_entry(entry)
-        fm.save_mapping(feed, data)
+        db.save_mapping(feed, data)
 
 
 def run(tuple):

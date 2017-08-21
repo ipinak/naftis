@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 import os
 import utils
+import couchdb
 
 from datetime import datetime
 
@@ -50,18 +51,25 @@ class CouchDBStorage(object):
 
     def __init__(self, config):
         self._config = config
+        self.connect()
 
     def connect(self):
-        self._username = self._config.get("db_username")
-        self._password = self._config.get("db_password")
+        self._connection = couchdb.Server(self._config.COUCHDB_URL)
+        self.db = self._get_db()
 
-        # Create the connection here
-        # self._connection = CouchDB()
+    def _get_db(self):
+        """Create a new database or get an existig one."""
 
-    def save(self, hash, contents):
+        db_name = self._config.DB_NAME
+        return self._connection[db_name]
+
+    def save_mapping(self, feed, contents):
         """
         Save the contents to the database.
-        :param hash
+        :param feed
         :param contents
         """
-        pass
+        link = feed.get('link')
+        di = {}
+        di[link] = unicode(contents, errors='ignore')
+        self.db.save(di)

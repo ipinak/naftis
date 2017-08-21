@@ -8,11 +8,13 @@ services:
             - "./tmp:/data"
         deploy:
             restart_policy:
-                condition: on-failure
-                delay: 5s
-                max_attempts: 3
-                window: 120s
+                condition: unless-stopped
     database:
-        image: "klaemo/couchdb:2.0.0"
+        image: "klaemo/couchdb:1.6.1"
+        ports:
+            - "5984:5984"
+        environment:
+            COUCHDB_USER: admin
+            COUCHDB_PASSWORD: "admin_paSS"
 
 

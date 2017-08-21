@@ -8,3 +8,5 @@ IE = "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS;rv:11.0) like Gecko"
 TIMEOUT = 10800  # 3 hours
 POOLSIZE = 5
 DEBUG = True
+COUCHDB_URL = "http://admin:admin_paSS@database:5984"
+DB_NAME = "naftis_docs"

@@ -1,15 +1,10 @@
-FROM ubuntu:14.04
+FROM python:2.7-alpine3.6
 MAINTAINER ipinak
 
 COPY ./ /naftis
 
 # Prepare the environment
-RUN apt-get update \
-    && apt-get install -y python python-dev git-core wget \
-    && wget https://bootstrap.pypa.io/get-pip.py \
-    && python get-pip.py \
-    && apt-get clean \
-    && cd naftis\
+RUN cd naftis \
     && pip install -r requirements.txt \
     && mkdir -p /var/tmp/supervisor
 
